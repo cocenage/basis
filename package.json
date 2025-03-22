@@ -32,5 +32,8 @@
     "bugs": {
         "url": "https://github.com/cocenage/basis/issues"
     },
-    "homepage": "https://github.com/cocenage/basis#readme"
+    "homepage": "https://github.com/cocenage/basis#readme",
+    "dependencies": {
+        "aos": "^2.3.4"
+    }
 }
