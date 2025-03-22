@@ -9,3 +9,26 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+h1 {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-weight: 500;
+    line-height: normal;
+}
+
+.content {
+   padding: 0 15px;
+}
+
+/* Стили для текста, который появляется */
+#logo-text {
+    opacity: 0; /* Изначально текст скрыт */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-left: 10px; /* Отступ, если нужно */
+}
+
+/* Стили для состояния при скролле */
+header.shrink #logo-text {
+    opacity: 1; /* Текст появляется */
+    transform: translateX(0);
+}

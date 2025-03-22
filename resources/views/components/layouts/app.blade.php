@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <div class="">
+        <a wire:wire:navigate href="{{ route('page.home') }}">
+            <img class="w-[145px] m-[15px] h-auto absolute z-50" src="{{ asset('images/logo.webp') }}" alt="logo">
+        </a>
+    </div>
     <livewire:partials.header />
     {{ $slot }}
     <livewire:partials.footer />
