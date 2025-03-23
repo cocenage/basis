@@ -10,15 +10,36 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+@font-face {
+    font-family: 'Akt'; /* Имя шрифта, которое вы будете использовать */
+    src: url('../fonts/Akt-Regular.ttf') format('ttf'),
+         url('../fonts/Akt-Regular.ttf') format('truetype');
+    font-weight: normal; /* Укажите нужный вес, если необходимо */
+    font-style: normal; /* Укажите стиль, если необходимо */
+}
+
+@font-face {
+    font-family: 'Akt';
+    src: url('../fonts/Akt-Medium.ttf') format('ttf'),
+         url('../fonts/Akt-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Akt', sans-serif;
+}
+
 h1 {
     font-size: clamp(2rem, 2.5vw, 3rem);
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
 h2 {
     font-size: clamp(1rem, 2vw, 2.5rem);
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
@@ -40,4 +61,12 @@ p {
 header.shrink #logo-text {
     opacity: 1; /* Текст появляется */
     transform: translateX(0);
+}
+
+.hide-scrollbar {
+    scrollbar-width: none; /* Для Firefox */
+    -ms-overflow-style: none; /* Для IE и Edge */
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari и Opera */
 }

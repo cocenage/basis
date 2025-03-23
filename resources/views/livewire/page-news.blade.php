@@ -1,3 +1,3 @@
-<div>
-    {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
+<div class="content mt-[180px]">
+<livewire:news.news-all-list />
 </div>
