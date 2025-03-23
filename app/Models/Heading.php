@@ -14,11 +14,15 @@ class Heading extends Model
         'slug',
         'description',
         'image',
-        
+
         'is_active',
 
         'meta_title',
         'meta_description',
         'meta_keywords',
+    ];
+
+    protected $casts = [
+        'description' => 'array',
     ];
 }

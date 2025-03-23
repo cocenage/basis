@@ -7,6 +7,7 @@ use App\Models\Heading;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Group;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Textarea;
@@ -64,9 +65,6 @@ class HeadingResource extends Resource
                                         ->unique(Heading::class, 'slug', ignoreRecord: true)
                                         ->required(),
                                 ]),
-                            Textarea::make('description')
-                                ->label('Описание записи')
-                                ->required(),
                             FileUpload::make('image')
                                 ->label('Изображение записи')
                                 ->image()
@@ -86,6 +84,16 @@ class HeadingResource extends Resource
                                 ->required(),
                         ]),
                     ])->columnSpanFull(),
+                    Section::make('Контент')->schema([
+                        Repeater::make('description')->label('Описание записи')->schema([
+                            TextInput::make('h1')
+                                ->label('Заголовок')
+                                ->required(),
+                            Textarea::make('p')
+                                ->label('Описание')
+                                ->required(),
+                        ])->columnSpanFull(),
+                    ])
                 ])->columnSpan(2),
                 Group::make()->schema([
                     Section::make('Статус записи')->schema([

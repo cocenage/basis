@@ -1,9 +1,16 @@
-<div class="content">
-    <div class="pt-[180px]">
-        <h1 class="md:w-[75%]">Материалы для мебельного производства высокого качества по доступным ценам</h1>
-        <img src="{{ asset('images/base.webp') }}" alt="img home" class="mt-[120px] mb-[180px] w-full h-[530px] rounded-[5px] aspect-video">
+@push('meta')
+<title>{{ 'Базис Волга – Материалы для производства мебели в Волгограде' }}</title>
+<meta name="description" content="Компания Базис Волга в Волгограде предлагает широкий ассортимент материалов для производства мебели: ЛДСП, МДФ, фурнитура и комплектующие. Высокое качество, доступные цены, доставка по региону.">
+<meta name="keywords" content="Базис Волга, материалы для мебели, ЛДСП, МДФ, фурнитура для мебели, производство мебели, Волгоград, купить материалы для мебели">
+<meta name="robots" content="index, follow">
+@endpush
 
-        <livewire:products.products-list />
+<div class="content mt-[180px]">
+    <div class="">
+        <h1 class="md:w-[75%]">Материалы для мебельного производства высокого качества по доступным ценам</h1>
+        <img src="{{ asset('images/base.webp') }}" alt="img home" class="mt-[120px] mb-[180px] w-full h-[530px] rounded-[5px] aspect-video object-cover">
+
+        <livewire:categories.categories-list />
 
         <livewire:news.news-list />
 

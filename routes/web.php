@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', PageHome::class)->name('page.home');
 
-Route::get('/catalog', PageCatalogs::class)->name('page.catalog');
-Route::get('/catalog/{slug}', SingleProduct::class)->name('single.product');
+Route::get('/catalog/{category?}', PageCatalogs::class)->name('page.catalog');
+Route::get('/catalog/product/{slug}', SingleProduct::class)->name('single.product');
 
 Route::get('/news', PageNews::class)->name('page.news');
 Route::get('/news/{slug}', SingleNews::class)->name('single.news');

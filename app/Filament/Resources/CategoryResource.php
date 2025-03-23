@@ -5,8 +5,10 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Models\Category;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -16,6 +18,8 @@ use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Forms\Set;
 
 class CategoryResource extends Resource
 {
@@ -40,19 +44,39 @@ class CategoryResource extends Resource
 
             ->schema([
                 Group::make()->schema([
-                    Section::make('Основная информация')->schema([
-                        TextInput::make('name')
-                            ->label('Название категории')
-                            ->required(),
-                        Textarea::make('description')
-                            ->label('Описание категории')
-                            ->required(),
-                        FileUpload::make('image')
-                            ->label('Изображение категории')
-                            ->image()
-                            ->imageEditor()
-                            ->directory('category')
-                            ->required(),
+                    Tabs::make('Основная информация')->tabs([
+                        Tabs\Tab::make('Основная информация')->schema([
+                            Grid::make(2)
+                                ->columns([
+                                    'sm' => 1,
+                                    'xl' => 2,
+                                ])
+                                ->schema([
+                                    TextInput::make('name')
+                                        ->label('Название категории')
+                                        ->maxLength(255)
+                                        ->live(onBlur: true)
+                                        ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                                        ->required(),
+                                    TextInput::make('slug')
+                                        ->maxLength(255)
+                                        ->disabled()
+                                        ->dehydrated()
+                                        ->unique(Category::class, 'slug', ignoreRecord: true)
+                                        ->required(),
+                                ]),
+                            Textarea::make('description')
+                                ->label('Описание категории')
+                                ->placeholder('надо?')
+                                ->required(),
+                                FileUpload::make('image')
+                                ->label('Изображение категории')
+                                ->image()
+                                ->imageEditor()
+                                ->directory('category')
+                                ->required(),
+                        ]),
+
                     ])->columnSpanFull(),
                 ])->columnSpan(2),
                 Group::make()->schema([

@@ -2,11 +2,20 @@ import './bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Импорт стилей
 
-// Инициализация AOS
+document.addEventListener('livewire:navigated', () => {
+    // Повторная инициализация AOS после навигации
+    AOS.init({
+        duration: 600,
+        offset: 30,
+        once: true,
+    });
+});
+
+// Инициализация AOS при первой загрузке страницы
 AOS.init({
-    duration: 800, // Длительность анимации
-    offset: 120,   // Отступ от верха экрана для запуска анимации
-    once: true,    // Анимация сработает только один раз
+    duration: 600,
+    offset: 30,
+    once: true,
 });
 
 document.addEventListener('scroll', () => {
