@@ -1,6 +1,6 @@
 import './bootstrap';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Импорт стилей
+import 'aos/dist/aos.css';
 
 document.addEventListener('livewire:navigated', () => {
     // Повторная инициализация AOS после навигации
@@ -28,4 +28,12 @@ document.addEventListener('scroll', () => {
         header.classList.remove('shrink');
     }
 });
+
+
+
+
+
+
+
+
 

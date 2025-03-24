@@ -9,7 +9,6 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Tabs;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
@@ -44,39 +43,32 @@ class CategoryResource extends Resource
 
             ->schema([
                 Group::make()->schema([
-                    Tabs::make('Основная информация')->tabs([
-                        Tabs\Tab::make('Основная информация')->schema([
-                            Grid::make(2)
-                                ->columns([
-                                    'sm' => 1,
-                                    'xl' => 2,
-                                ])
-                                ->schema([
-                                    TextInput::make('name')
-                                        ->label('Название категории')
-                                        ->maxLength(255)
-                                        ->live(onBlur: true)
-                                        ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
-                                        ->required(),
-                                    TextInput::make('slug')
-                                        ->maxLength(255)
-                                        ->disabled()
-                                        ->dehydrated()
-                                        ->unique(Category::class, 'slug', ignoreRecord: true)
-                                        ->required(),
-                                ]),
-                            Textarea::make('description')
-                                ->label('Описание категории')
-                                ->placeholder('надо?')
-                                ->required(),
-                                FileUpload::make('image')
-                                ->label('Изображение категории')
-                                ->image()
-                                ->imageEditor()
-                                ->directory('category')
-                                ->required(),
-                        ]),
-
+                    Section::make('Основная информация')->schema([
+                        Grid::make(2)
+                            ->columns([
+                                'sm' => 1,
+                                'xl' => 2,
+                            ])
+                            ->schema([
+                                TextInput::make('name')
+                                    ->label('Название категории')
+                                    ->maxLength(255)
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                                    ->required(),
+                                TextInput::make('slug')
+                                    ->maxLength(255)
+                                    ->disabled()
+                                    ->dehydrated()
+                                    ->unique(Category::class, 'slug', ignoreRecord: true)
+                                    ->required(),
+                            ]),
+                        FileUpload::make('image')
+                            ->label('Изображение категории')
+                            ->image()
+                            ->imageEditor()
+                            ->directory('category')
+                            ->required(),
                     ])->columnSpanFull(),
                 ])->columnSpan(2),
                 Group::make()->schema([

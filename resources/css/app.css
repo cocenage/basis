@@ -29,6 +29,7 @@
 
 body {
     font-family: 'Akt', sans-serif;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -70,3 +71,5 @@ header.shrink #logo-text {
 .hide-scrollbar::-webkit-scrollbar {
     display: none; /* Для Chrome, Safari и Opera */
 }
+
+

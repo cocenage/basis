@@ -17,6 +17,7 @@
     @stack('meta')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'"/>
 </head>
 
 <body>
@@ -28,6 +29,7 @@
     <livewire:partials.header />
     {{ $slot }}
     <livewire:partials.footer />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
 </body>
 
 </html>

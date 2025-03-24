@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Contact extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'slug',
-        'image',
-        'is_active',
+        'phone',
+        'phone_a',
+        'mail',
     ];
 
-    public function products()
-    {
-        return $this->belongsToMany(Product::class);
-    }
+    protected $casts = [
+        'name' => 'array',
+    ];
 }
