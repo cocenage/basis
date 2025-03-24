@@ -6,6 +6,7 @@
 
 <div class="content mt-[180px]">
     <h1 class="md:w-[75%]">Материалы для мебельного производства высокого качества по доступным ценам</h1>
+    <div id="map"></div>
     <div class="mt-[120px] mb-[180px] w-full h-[530px] rounded-[5px] aspect-video object-cover bg-amber-100">map</div>
     <div class="flex flex-col gap-[30px] pb-[60px]">
         <h2 class="">Номер телефона</h2>

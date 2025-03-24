@@ -35,5 +35,9 @@ document.addEventListener('scroll', () => {
 
 
 
-
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('modal', {
+            open: false
+        });
+    });
 

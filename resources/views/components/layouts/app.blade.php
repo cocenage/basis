@@ -17,13 +17,13 @@
     @stack('meta')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'" />
 </head>
 
 <body>
     <div class="">
         <a wire:navigate href="{{ route('page.home') }}">
-            <img class="w-[145px] m-[15px] h-auto absolute z-[51]" src="{{ asset('images/logo.webp') }}" alt="logo">
+            <img x-show="!$store.modal.open" class="w-[100px] md:w-[145px] m-[15px] h-auto absolute z-[51]" src="{{ asset('images/logo.webp') }}" alt="logo">
         </a>
     </div>
     <livewire:partials.header />
