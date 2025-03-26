@@ -4,7 +4,7 @@
 <meta name="keywords" content="контакты Базис Волга, адрес Базис Волга, телефон Базис Волга, как доехать до Базис Волга, Волгоград">
 @endpush
 
-<div class="content mt-[180px]">
+<div class="content mt-[60px] md:mt-[180px]">
     <h1 class="md:w-[75%]">Всегда на связи! Ответим на вопросы и поможем с выбором.</h1>
     <div class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] overflow-hidden relative group">
         <a target="_blank" href="https://yandex.ru/maps/org/bazis_volga/1117385851/?from=mapframe&ll=44.498838%2C48.714185&source=mapframe&um=constructor%3A5a1aae906d26e7440576e3929267242a628b9d57f1015ed8a0d918c6e6f90b45&utm_source=mapframe&z=18.09">
@@ -43,7 +43,7 @@
         </div>
         @endforeach
         @else
-        <p>Контакты отсутствуют.</p>
+
         @endif
     </div>
 </div>

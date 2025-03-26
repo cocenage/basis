@@ -10,7 +10,7 @@
      })">
 
     <!-- Open Modal Button -->
-    <button @click="isOpen = true" class="text-[16px] px-[12px] py-[6px] rounded-[10px] hover:bg-[#f2f2f2] duration-300 cursor-pointer">
+    <button @click="isOpen = true" class="text-[16px] px-[12px] py-[6px] rounded-[10px] hover:bg-[#f2f2f2] active:bg-[#f2f2f2] duration-300 cursor-pointer">
         <span class="sr-only">Open main menu</span>
         <x-heroicon-o-bars-2 class="h-6 w-6" />
     </button>
@@ -28,19 +28,19 @@
         @click="isOpen = false"
         @keydown.escape.window="isOpen = false">
         <!-- Close Button -->
-        <div class="content max-h-screen">
-            <nav class="z-[52] mx-auto flex w-full items-stretch justify-between p-[15px]" aria-label="Global">
-                <a wire:navigate href="{{ route('page.home') }}" class="text-[16px] px-[12px] py-[6px] rounded-[10px] hover:bg-[#f2f2f2] transition-all duration-300">Базис-Волга</a>
-                <button
-                    x-show="isOpen"
-                    x-transition.opacity.duration.500ms
-                    @click.stop="isOpen = false"
-                    class="text-[16px] px-[12px] py-[6px] rounded-[10px] hover:bg-[#f2f2f2] duration-300 cursor-pointer">
-                    <x-heroicon-o-x-mark class="h-6 w-6" />
-                </button>
-            </nav>
-            <div class="flex flex-col justify-between h-full">
-                <div class="mt-[180px] flex flex-col gap-[5px]">
+        <div class="content min-h-screen">
+            <div class="flex flex-col justify-between h-screen">
+                <nav class="z-[52] mx-auto flex w-full items-stretch justify-between pt-[15px]" aria-label="Global">
+                    <a wire:navigate href="{{ route('page.home') }}" class="text-[16px] px-[12px] py-[6px] rounded-[10px] hover:bg-[#f2f2f2] transition-all duration-300">Базис-Волга</a>
+                    <button
+                        x-show="isOpen"
+                        x-transition.opacity.duration.500ms
+                        @click.stop="isOpen = false"
+                        class="text-[16px] px-[12px] py-[6px] rounded-[10px] hover:bg-[#f2f2f2] duration-300 cursor-pointer">
+                        <x-heroicon-o-x-mark class="h-6 w-6" />
+                    </button>
+                </nav>
+                <div class=" flex flex-col gap-[5px]">
                     <a wire:navigate href="{{ route('page.catalog') }}" class="">
                         <h1>Каталог</h1>
                     </a>
@@ -70,12 +70,15 @@
                     </div>
                     @endforeach
                     @else
-                    <p>Контакты отсутствуют.</p>
+
                     @endif
                 </div>
-                <div class="flex justify-between py-[15px] text-[14px] sm:text-[16px]">
-                    <p>© Базис-Волга</p>
-                    <a class="hover:underline" href="{{ asset('files/privacy.pdf') }}" target="_blank">Политика конфиденциальности</a>
+                <div class="md:hidden flex flex-col py-[15px] text-[16px]">
+                    <div class="flex justify-between w-full items-center">
+                        <p>© Базис-Волга</p>
+                        <a target="_blank" class="hover:underline" href="https://t.me/avangaard1k">by @avangaard1k</a>
+                    </div>
+                    <a class="hover:underline pt-[10px]" href="{{ asset('files/privacy.pdf') }}" target="_blank">Политика конфиденциальности</a>
                 </div>
             </div>
         </div>

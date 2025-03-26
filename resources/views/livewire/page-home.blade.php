@@ -5,7 +5,7 @@
 <meta name="robots" content="index, follow">
 @endpush
 
-<div class="content mt-[180px]">
+<div class="content mt-[60px] md:mt-[180px]">
     <div class="">
         <h1 class="md:w-[75%]">
             Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
@@ -16,7 +16,7 @@
             loop
             preload="metadata"
             poster="{{ asset('images/imghoma.webp') }}"
-            class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
+            class="mt-[60px] md:mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
             <source src="{{ asset('images/home.webm') }}" type="video/webm">
             Ваш браузер не поддерживает видео.
         </video>

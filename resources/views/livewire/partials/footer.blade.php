@@ -12,7 +12,7 @@
         <a class="hover:underline" href="{{ asset('files/privacy.pdf') }}" target="_blank">Политика конфиденциальности</a>
         <a target="_blank" class="hover:underline" href="https://t.me/avangaard1k">by @avangaard1k</a>
     </div>
-    <div class="md:hidden flex flex-col py-[15px] text-[14px] sm:text-[16px]">
+    <div class="md:hidden flex flex-col py-[15px] text-[16px]">
         <div class="flex justify-between w-full items-center">
         <p>© Базис-Волга</p>
         <a target="_blank" class="hover:underline" href="https://t.me/avangaard1k">by @avangaard1k</a>

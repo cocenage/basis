@@ -4,7 +4,7 @@
 <meta name="keywords" content="каталог Базис Волга, ЛДСП купить, МДФ купить, фурнитура для мебели, материалы для мебели, Волгоград">
 @endpush
 
-<div class="content mt-[80px] md:mt-[180px]" x-data="{ isOpen: false }">
+<div class="content mt-[60px] md:mt-[180px]" x-data="{ isOpen: false }">
     <h2 class="mb-[75px] ">Каталог</h2>
     <div class="flex flex-col md:flex-row gap-[15px]">
         <!-- Кнопка для мобильных устройств -->

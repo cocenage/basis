@@ -5,6 +5,6 @@
 @endpush
 
 
-<div class="content mt-[180px]">
+<div class="content mt-[60px] md:mt-[180px]">
 <livewire:news.news-all-list />
 </div>

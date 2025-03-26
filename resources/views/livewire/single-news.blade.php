@@ -4,7 +4,7 @@
 <meta name="keywords" content="{{ $meta_keywords }}">
 @endpush
 
-<div class="content mt-[180px]">
+<div class="content mt-[60px] md:mt-[180px]">
     <h1 class="md:w-[75%]">{{ $news->name }}</h1>
     <img src="{{ asset('storage/' . $news->image) }}" alt="img news" class="mt-[120px] w-full h-[530px] rounded-[10px] aspect-video object-cover">
 

@@ -4,7 +4,7 @@
 <meta name="keywords" content="{{ $meta_keywords }}">
 @endpush
 
-<div class="content mt-[180px] mb-[120px]">
+<div class="content mt-[60px] md:mt-[180px] mb-[120px]">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-[15px]">
 
         <div class="col-span-1 flex flex-col justify-between">
