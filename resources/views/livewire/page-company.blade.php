@@ -14,7 +14,7 @@
             preload="metadata"
             poster="{{ asset('images/video1.webp') }}"
             class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
-            <source src="{{ asset('images/company.mp4') }}" type="video/mp4">
+            <source src="{{ asset('images/company.webm') }}" type="video/webm">
             Ваш браузер не поддерживает видео.
         </video>
     </div>
