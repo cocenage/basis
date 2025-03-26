@@ -7,8 +7,19 @@
 
 <div class="content mt-[180px]">
     <div class="">
-        <h1 class="md:w-[75%]">Материалы для мебельного производства высокого качества по доступным ценам</h1>
-        <img src="{{ asset('images/base.webp') }}" alt="img home" class="mt-[120px] mb-[180px] w-full h-[530px] rounded-[5px] aspect-video object-cover">
+        <h1 class="md:w-[75%]">
+            Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
+        </h1>
+        <video
+            autoplay
+            muted
+            loop
+            preload="metadata"
+            poster="{{ asset('images/imghoma.webp') }}"
+            class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
+            <source src="{{ asset('images/home.webm') }}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
 
         <livewire:categories.categories-list />
 
@@ -19,9 +30,8 @@
                 <h1 class="flex flex-col">Мы — команда профессионалов с десятилетним опытом. <span>Наша цель — делать вашу жизнь проще,</span>а бизнес — успешнее.</h1>
             </div>
             <div class="mb-[120px] mt-[40px]">
-                <a wire:navigate href="{{ route('page.contacts') }}" class="text-[16px] px-[24px] py-[12px] rounded-[5px] bg-[#f2f2f2] hover:bg-[#e1e1e1] duration-300  ">Узнать больше</a>
+                <x-color-button-all route="page.company" title="Узнать больше" />
             </div>
-
         </div>
     </div>
 </div>

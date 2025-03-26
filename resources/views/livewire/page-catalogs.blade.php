@@ -5,17 +5,16 @@
 @endpush
 
 <div class="content mt-[80px] md:mt-[180px]" x-data="{ isOpen: false }">
-<h2 class="mb-[75px] ">Каталог</h2>
+    <h2 class="mb-[75px] ">Каталог</h2>
     <div class="flex flex-col md:flex-row gap-[15px]">
         <!-- Кнопка для мобильных устройств -->
         <div class="md:hidden">
             <button
                 @click="isOpen = !isOpen"
-                class="w-full text-left px-[24px] py-[12px] bg-[#f2f2f2] text-black rounded-[5px] cursor-pointer hover:bg-[#e1e1e1] duration-300">
+                class="w-full text-left px-[24px] py-[12px] bg-[#f2f2f2] text-black rounded-[10px] cursor-pointer hover:bg-[#e1e1e1] duration-300">
                 <span x-text="isOpen ? 'Скрыть категории' : 'Показать категории'"></span>
             </button>
         </div>
-
         <!-- Меню категорий с анимацией -->
         <div
             x-show="isOpen || window.innerWidth >= 768"
@@ -31,7 +30,7 @@
                 <li>
                     <button
                         wire:click="$set('selectedCategorySlug', null)"
-                        class="w-full text-left px-[24px] py-[12px] rounded-[5px] cursor-pointer {{ is_null($selectedCategorySlug) ? 'bg-[#f2f2f2] text-black' : 'bg-gray-100 hover:bg-[#e1e1e1] cursor-pointer' }}">
+                        class="w-full text-left px-[24px] py-[12px] rounded-[10px] cursor-pointer {{ is_null($selectedCategorySlug) ? 'bg-[#e1e1e1] text-black' : 'bg-gray-100 hover:bg-[#e1e1e1] cursor-pointer' }}">
                         Все товары
                     </button>
                 </li>
@@ -39,24 +38,24 @@
                 <li>
                     <button
                         wire:click="$set('selectedCategorySlug', '{{ $category->slug }}')"
-                        class="w-full text-left px-[24px] py-[12px] rounded-[5px] cursor-pointer {{ $selectedCategorySlug === $category->slug ? 'bg-[#f2f2f2] text-black' : 'bg-gray-100 hover:bg-[#e1e1e1] cursor-pointer' }}">
+                        class="w-full text-left px-[24px] py-[12px] rounded-[10px] cursor-pointer {{ $selectedCategorySlug === $category->slug ? 'bg-[#e1e1e1] text-black' : 'bg-gray-100 hover:bg-[#e1e1e1] cursor-pointer' }}">
                         {{ $category->name }}
                     </button>
                 </li>
                 @endforeach
             </ul>
         </div>
-
         <!-- Товары -->
-        <div class="w-full md:w-3/4">
+        <div class="w-full md:w-3/4 pb-[90px]">
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 @foreach ($products as $index => $product)
-                <div class="col-span-1 overflow-hidden rounded-[5px]"
-                    data-aos="fade-up"
-                    data-aos-delay="{{ $index * 100 }}">
+                <div class="col-span-1 overflow-hidden rounded-[10px]">
                     <a wire:navigate href="{{ route('single.product', $product->slug) }}">
-                        <img src="{{ asset('storage/' . $product->image) }}" class="w-full rounded-[5px] object-cover aspect-square" alt="img catalog" loading="lazy">
-                        <p class="text-base md:text-[20px] pt-[10px] pb-[30px] md:pb-[60px]">{{ $product->name }}</p>
+                        <div class="overflow-hidden rounded-[10px] aspect-square">
+                            <img src="{{ asset('storage/' . $product->image) }}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="img catalog" loading="lazy">
+
+                        </div>
+                        <p class="md:text-[20px] pt-[10px] pb-[30px] md:pb-[60px]">{{ $product->name }}</p>
                     </a>
                 </div>
                 @endforeach
@@ -64,4 +63,3 @@
         </div>
     </div>
 </div>
-

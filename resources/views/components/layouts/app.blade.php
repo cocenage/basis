@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <livewire:preloader.preloader />
     <div class="">
         <a wire:navigate href="{{ route('page.home') }}">
             <img x-show="!$store.modal.open" class="w-[100px] md:w-[145px] m-[15px] h-auto absolute z-[51]" src="{{ asset('images/logo.webp') }}" alt="logo">

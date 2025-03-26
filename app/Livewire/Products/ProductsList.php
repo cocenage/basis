@@ -22,3 +22,4 @@ class ProductsList extends Component
         ]);
     }
 }
+//удали

@@ -1,9 +1,9 @@
 @props(['data', 'index'])
 
-<div class="col-span-1 overflow-hidden rounded-[5px] group" data-aos="fade-up"
+<div class="col-span-1 overflow-hidden rounded-[10px] group" data-aos="fade-up"
     data-aos-delay="{{ $index * 100 }}">
     <a wire:navigate href="{{ route('single.news', $data->slug) }}">
-        <img src="{{ asset('storage/' . $data->image) }}" class="w-full rounded-[5px] object-cover aspect-video" alt="img catalog" loading="lazy">
+        <img src="{{ asset('storage/' . $data->image) }}" class="w-full rounded-[10px] object-cover aspect-video" alt="img catalog" loading="lazy">
         <div class="flex gap-[5px] items-center pt-[15px] group">
             <p class="text-[20px] relative inline-block">
                 {{ $data->name }}

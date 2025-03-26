@@ -10,6 +10,6 @@
         @endforelse
     </div>
     <div class="mb-[180px] mt-[60px] w-full flex justify-center">
-        <a wire:navigate href="{{ route('page.catalog') }}" class="text-[16px] px-[24px] py-[12px] rounded-[5px] bg-[#f2f2f2] hover:bg-[#e1e1e1] duration-300">Больше товаров</a>
+        <x-color-button-all route="page.catalog" title="Больше товаров" />
     </div>
 </div>
