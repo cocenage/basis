@@ -67,7 +67,7 @@ class HeadingResource extends Resource
                                 ]),
                             FileUpload::make('image')
                                 ->label('Изображение записи')
-                                ->image()
+                                ->maxSize(50 * 1024) // 50MB лимит
                                 ->imageEditor()
                                 ->directory('news')
                                 ->required(),
@@ -87,11 +87,9 @@ class HeadingResource extends Resource
                     Section::make('Контент')->schema([
                         Repeater::make('description')->label('Описание записи')->schema([
                             TextInput::make('h1')
-                                ->label('Заголовок')
-                                ->required(),
+                                ->label('Заголовок'),
                             Textarea::make('p')
-                                ->label('Описание')
-                                ->required(),
+                                ->label('Описание'),
                         ])->columnSpanFull(),
                     ])
                 ])->columnSpan(2),

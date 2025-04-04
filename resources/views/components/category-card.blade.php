@@ -7,7 +7,7 @@
         <div class="overflow-hidden rounded-[10px] aspect-square">
             <img src="{{ asset('storage/' . $data->image) }}"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                alt="{{ $data->name }}"
+                alt="img catalog"
                 loading="lazy">
         </div>
         <p class="text-[20px] pt-[15px] pb-[60px]">{{ $data->name }}</p>

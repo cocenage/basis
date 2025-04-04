@@ -10,29 +10,32 @@
         <div class="col-span-1 flex flex-col justify-between">
 
             <div class="">
-                <nav class="w-full rounded-md">
-                    <ol class="list-reset flex">
-                        <li class="group">
-                            <a
-                                wire:wire:navigate
-                                href="{{ route('page.home') }}"
-                                class="flex gap-[5px] items-center group-hover:opacity-50"> <x-heroicon-o-home class="h-5 w-5 group-hover:opacity-50" />Главная страница</a>
-                        </li>
-                        <li>
-                            <span class="mx-2 opacity-50">/</span>
-                        </li>
-                        <li>
-                            <a
-                                wire:wire:navigate
-                                href="{{ route('page.catalog') }}"
-                                class="hover:opacity-50">Каталог</a>
-                        </li>
-                        <li>
-                            <span class="mx-2 opacity-50">/</span>
-                        </li>
-                        <li class="opacity-50">{{ $product->name }}</li>
-                    </ol>
-                </nav>
+            <nav class="w-full rounded-md overflow-x-auto whitespace-nowrap">
+    <ol class="list-reset flex" style="display: inline-flex;">
+        <li class="group">
+            <a
+                wire:navigate
+                href="{{ route('page.home') }}"
+                class="flex gap-[5px] items-center group-hover:opacity-50">
+                <x-heroicon-o-home class="h-5 w-5 group-hover:opacity-50" />
+                Главная страница
+            </a>
+        </li>
+        <li>
+            <span class="mx-2 opacity-50">/</span>
+        </li>
+        <li>
+            <a
+                wire:navigate
+                href="{{ route('page.catalog') }}"
+                class="hover:opacity-50">Каталог</a>
+        </li>
+        <li>
+            <span class="mx-2 opacity-50">/</span>
+        </li>
+        <li class="opacity-50">{{ $product->name }}</li>
+    </ol>
+</nav>
 
                 <h1 class="pt-[10px] md:pt-[30px]">{{ $product->name }}</h1>
 

@@ -10,16 +10,23 @@
         <h1 class="md:w-[75%]">
             Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
         </h1>
+        
         <video
             autoplay
             muted
             loop
             preload="metadata"
             poster="{{ asset('images/imghoma.webp') }}"
-            class="mt-[60px] md:mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
+            class="hidden md:block mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
             <source src="{{ asset('images/home.webm') }}" type="video/webm">
             Ваш браузер не поддерживает видео.
         </video>
+
+        <!-- Картинка (только на мобильных) -->
+        <img
+            src="{{ asset('images/mobail.webp') }}"
+            alt="img"
+            class="block md:hidden mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
 
         <livewire:categories.categories-list />
 

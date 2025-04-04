@@ -5,47 +5,53 @@ namespace App\Livewire;
 use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
-use Livewire\Attributes\Url; // Импортируем атрибут Url
+use Livewire\Attributes\Url;
+use Livewire\WithPagination; // Добавляем трейт для пагинации
 
 class PageCatalogs extends Component
 {
-    #[Url] // Используем атрибут Url для автоматической привязки параметра из URL
-    public $selectedCategorySlug = null; // Слаг выбранной категории
+    use WithPagination; // Используем трейт пагинации
 
-    public $products = []; // Товары выбранной категории
+    #[Url]
+    public $selectedCategorySlug = null;
 
-    // При изменении выбранной категории обновляем товары
+    #[Url] // Добавляем параметр страницы в URL
+    public $page = 1;
+
+    // Убираем массив products, так как будем использовать пагинацию
+
+    // При изменении выбранной категории сбрасываем пагинацию на первую страницу
     public function updatedSelectedCategorySlug($slug)
     {
-        $this->loadProducts($slug);
+        $this->resetPage(); // Сбрасываем пагинацию на первую страницу
     }
 
-    // Загрузка товаров по слагу категории
-    public function loadProducts($slug)
+    // Метод для получения товаров с пагинацией
+    public function getProducts()
     {
-        if ($slug) {
-            $category = Category::where('slug', $slug)->first();
-            $this->products = $category ? $category->products : [];
+        if ($this->selectedCategorySlug) {
+            $category = Category::where('slug', $this->selectedCategorySlug)->first();
+            return $category
+                ? $category->products()->paginate(12) // Пагинация для товаров категории
+                : collect();
         } else {
-            $this->products = Product::all(); // Если категория не выбрана, показываем все товары
+            return Product::paginate(12); // Пагинация для всех товаров
         }
     }
 
-    // При монтировании компонента загружаем товары в зависимости от выбранной категории
     public function mount($category = null)
     {
         if ($category) {
             $this->selectedCategorySlug = $category;
         }
-        $this->loadProducts($this->selectedCategorySlug);
     }
 
     public function render()
     {
-        $categories = Category::all(); // Получаем все категории
+        $categories = Category::all();
         return view('livewire.page-catalogs', [
             'categories' => $categories,
-            'products' => $this->products,
+            'products' => $this->getProducts(), // Используем метод с пагинацией
         ]);
     }
 }

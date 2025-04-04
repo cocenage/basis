@@ -60,6 +60,75 @@
                 </div>
                 @endforeach
             </div>
+            <!-- Кастомная пагинация -->
+            @if ($products->hasPages())
+                <div class="mt-[60px] flex flex-wrap justify-center items-center gap-2">
+                    {{-- Кнопка "Назад" --}}
+                    @if ($products->onFirstPage())
+                        <span class="px-4 py-2 rounded-[10px] bg-gray-100 text-gray-400 cursor-not-allowed">
+                            &laquo; Назад
+                        </span>
+                    @else
+                        <a wire:click="previousPage" wire:loading.attr="disabled"
+                           class="px-4 py-2 rounded-[10px] bg-[#f2f2f2] text-black hover:bg-[#e1e1e1] cursor-pointer transition duration-300">
+                            &laquo; Назад
+                        </a>
+                    @endif
+
+                    {{-- Номера страниц --}}
+                    @php
+                        // Определяем диапазон отображаемых страниц
+                        $current = $products->currentPage();
+                        $last = $products->lastPage();
+                        $start = max($current - 2, 1);
+                        $end = min($current + 2, $last);
+
+                        // Добавляем первую страницу и разделитель если нужно
+                        if ($start > 1) {
+                            $pages[] = 1;
+                            if ($start > 2) $pages[] = '...';
+                        }
+
+                        // Основной диапазон
+                        for ($i = $start; $i <= $end; $i++) {
+                            $pages[] = $i;
+                        }
+
+                        // Добавляем последнюю страницу и разделитель если нужно
+                        if ($end < $last) {
+                            if ($end < $last - 1) $pages[] = '...';
+                            $pages[] = $last;
+                        }
+                    @endphp
+
+                    @foreach ($pages as $page)
+                        @if ($page == '...')
+                            <span class="px-3 py-1">...</span>
+                        @elseif ($page == $current)
+                            <span class="px-4 py-2 rounded-[10px] bg-[#e1e1e1] text-black font-medium">
+                                {{ $page }}
+                            </span>
+                        @else
+                            <a wire:click="gotoPage({{ $page }})"
+                               class="px-4 py-2 rounded-[10px] bg-[#f2f2f2] text-black hover:bg-[#e1e1e1] cursor-pointer transition duration-300">
+                                {{ $page }}
+                            </a>
+                        @endif
+                    @endforeach
+
+                    {{-- Кнопка "Вперед" --}}
+                    @if ($products->hasMorePages())
+                        <a wire:click="nextPage" wire:loading.attr="disabled"
+                           class="px-4 py-2 rounded-[10px] bg-[#f2f2f2] text-black hover:bg-[#e1e1e1] cursor-pointer transition duration-300">
+                            Вперед &raquo;
+                        </a>
+                    @else
+                        <span class="px-4 py-2 rounded-[10px] bg-gray-100 text-gray-400 cursor-not-allowed">
+                            Вперед &raquo;
+                        </span>
+                    @endif
+                </div>
+            @endif
         </div>
     </div>
 </div>
