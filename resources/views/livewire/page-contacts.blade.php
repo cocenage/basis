@@ -32,6 +32,10 @@
             {{ $contact->mail }}
         </a>
     </div>
+        <div class="flex flex-col gap-[30px] pb-[60px]">
+        <h2 class="">Свяжитесь с нами</h2>
+        <livewire:feedback.connection />
+    </div>
     <div class="pb-[60px]">
         @if (is_array($contact->name) && count($contact->name) > 0)
         @foreach ($contact->name as $item)

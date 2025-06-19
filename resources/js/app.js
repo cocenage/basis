@@ -192,3 +192,58 @@ document.addEventListener("livewire:navigating", () => {
 document.addEventListener("livewire:navigated", () => {
     window.livewireNavigating = false;
 });
+
+// ...AOS
+
+  function formatPhone(input) {
+    let value = input.value.replace(/\D/g, "");
+    let formattedValue = "";
+
+    if (value.startsWith("7")) {
+        value = value.substring(1);
+    }
+
+    if (value.length > 0) {
+        formattedValue = "+7 ";
+        if (value.length > 0) formattedValue += `(${value.substring(0, 3)}`;
+        if (value.length > 3) formattedValue += `) ${value.substring(3, 6)}`;
+        if (value.length > 6) formattedValue += `-${value.substring(6, 8)}`;
+        if (value.length > 8) formattedValue += `-${value.substring(8, 10)}`;
+    }
+
+    input.value = formattedValue;
+}
+
+// Инициализация для обычной загрузки
+document.addEventListener("DOMContentLoaded", initPhoneInput);
+// Инициализация для Livewire навигации
+document.addEventListener("livewire:navigated", initPhoneInput);
+document.addEventListener("livewire:load", initPhoneInput);
+
+function initPhoneInput() {
+    const phoneInput = document.getElementById("phone");
+
+    if (!phoneInput) return;
+
+    // Обработчик ввода
+    phoneInput.addEventListener("input", (e) => {
+        formatPhone(e.target);
+        // Синхронизация с Livewire (если используется wire:model)
+        if (e.target.hasAttribute("wire:model")) {
+            const model = e.target.getAttribute("wire:model");
+            Livewire.find(
+                e.target.closest("[wire\\:id]").getAttribute("wire:id")
+            ).set(model, e.target.value.replace(/\D/g, "").replace(/^7/, ""));
+        }
+    });
+
+    // Обработчик Backspace
+    phoneInput.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace") {
+            setTimeout(() => formatPhone(e.target), 0);
+        }
+    });
+
+    // Инициализация начального значения
+    formatPhone(phoneInput);
+}
