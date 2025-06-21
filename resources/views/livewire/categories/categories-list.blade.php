@@ -9,7 +9,7 @@
         <p>продуктов нет</p>
         @endforelse
     </div>
-    <div class="mb-[180px] mt-[60px] w-full flex justify-center">
-        <x-color-button-all route="page.catalog" title="Больше товаров" />
+    <div class="pb-[180px] pt-[60px] w-full flex justify-center">
+         <a wire:navigate href="{{ route('page.catalog') }}" class="text-[16px] px-[24px] py-[12px] rounded-[5px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">Больше товаров</a>
     </div>
 </div>

@@ -10,7 +10,7 @@
         <h1 class="md:w-[75%]">
             Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
         </h1>
-        
+
         <video
             autoplay
             muted
@@ -37,7 +37,7 @@
                 <h1 class="flex flex-col">Мы — команда профессионалов с десятилетним опытом. <span>Наша цель — делать вашу жизнь проще,</span>а бизнес — успешнее.</h1>
             </div>
             <div class="mb-[120px] mt-[40px]">
-                <x-color-button-all route="page.company" title="Узнать больше" />
+                <a wire:navigate href="{{ route('page.company') }}" class="text-[16px] px-[24px] py-[12px] rounded-[5px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">Узнать больше</a>
             </div>
         </div>
     </div>

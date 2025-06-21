@@ -10,39 +10,39 @@
         <div class="col-span-1 flex flex-col justify-between">
 
             <div class="">
-            <nav class="w-full rounded-md overflow-x-auto whitespace-nowrap">
-    <ol class="list-reset flex" style="display: inline-flex;">
-        <li class="group">
-            <a
-                wire:navigate
-                href="{{ route('page.home') }}"
-                class="flex gap-[5px] items-center group-hover:opacity-50">
-                <x-heroicon-o-home class="h-5 w-5 group-hover:opacity-50" />
-                Главная страница
-            </a>
-        </li>
-        <li>
-            <span class="mx-2 opacity-50">/</span>
-        </li>
-        <li>
-            <a
-                wire:navigate
-                href="{{ route('page.catalog') }}"
-                class="hover:opacity-50">Каталог</a>
-        </li>
-        <li>
-            <span class="mx-2 opacity-50">/</span>
-        </li>
-        <li class="opacity-50">{{ $product->name }}</li>
-    </ol>
-</nav>
+                <nav class="w-full rounded-md overflow-x-auto whitespace-nowrap">
+                    <ol class="list-reset flex" style="display: inline-flex;">
+                        <li class="group">
+                            <a
+                                wire:navigate
+                                href="{{ route('page.home') }}"
+                                class="flex gap-[5px] items-center group-hover:text-[#08338F]">
+                                <x-heroicon-o-home class="h-5 w-5 group-hover:text-[#08338F]" />
+                                Главная страница
+                            </a>
+                        </li>
+                        <li>
+                            <span class="mx-2 opacity-50">/</span>
+                        </li>
+                        <li>
+                            <a
+                                wire:navigate
+                                href="{{ route('page.catalog') }}"
+                                class="hover:text-[#08338F]">Каталог</a>
+                        </li>
+                        <li>
+                            <span class="mx-2 opacity-50">/</span>
+                        </li>
+                        <li class="opacity-50">{{ $product->name }}</li>
+                    </ol>
+                </nav>
 
                 <h1 class="pt-[10px] md:pt-[30px]">{{ $product->name }}</h1>
 
                 <h2 class="pt-[15px]">
                     Категории:
                     @foreach($product->category as $category)
-                    <a class="hover:opacity-50" wire:navigate href="{{ route('page.catalog', ['category' => $category->slug]) }}">
+                    <a class="hover:text-[#08338F]" wire:navigate href="{{ route('page.catalog', ['category' => $category->slug]) }}">
                         {{ $category->name }}
                     </a>
                     @if(!$loop->last), @endif
@@ -66,7 +66,7 @@
                 alt="{{ $product->name }}"
                 class="w-full aspect-square object-cover rounded-[10px]">
 
-                <div class="pt-[15px] md:hidden block">
+            <div class="pt-[15px] md:hidden block">
                 <p>Образец является репродукцией. Выбор подходящего по цвету декора возможен только с использованием оригинального образца.</p>
             </div>
         </div>

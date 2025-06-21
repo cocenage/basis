@@ -62,6 +62,7 @@
     <!-- Логотип по центру -->
     <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
         :class="{'opacity-100': show, 'opacity-0': !show}">
-        <p class="text-[16px] px-[12px] py-[6px] rounded-[5px] bg-[#f2f2f2]">Базис-волга</p>
+        <img src="{{ asset('images/logo.webp') }}" alt="logo" class="w-[100px] md:w-[145px] m-[15px] h-auto">
+        <!-- <p class="text-[16px] px-[12px] py-[6px] rounded-[5px] bg-[#f2f2f2] text-[#08338F]">Базис-волга</p> -->
     </div>
 </div>
