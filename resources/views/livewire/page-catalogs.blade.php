@@ -13,7 +13,7 @@
         <div class="md:hidden">
             <button
                 @click="isOpen = !isOpen"
-                class="w-full text-left px-[24px] py-[12px] bg-[#f2f2f2] text-black rounded-[10px] cursor-pointer hover:bg-[#e1e1e1] duration-300">
+                class="w-full text-left px-[24px] py-[12px] bg-[#08338F] hover:bg-[#D02320] text-white rounded-[10px] cursor-pointer duration-300">
                 <span x-text="isOpen ? 'Скрыть категории' : 'Показать категории'"></span>
             </button>
         </div>

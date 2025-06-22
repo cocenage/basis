@@ -23,8 +23,6 @@
             @endforeach
         </div>
 
-    <!-- Добавьте эти кнопки -->
-        <div class="swiper-button-prev !left-[20px] !text-black"></div>
-        <div class="swiper-button-next !right-[20px] !text-black"></div>
+
     </div>
 </div>
