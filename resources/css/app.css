@@ -11,19 +11,19 @@
 }
 
 @font-face {
-    font-family: 'Akt'; /* Имя шрифта, которое вы будете использовать */
-    src: url('../fonts/Akt-Regular.ttf') format('ttf'),
-         url('../fonts/Akt-Regular.ttf') format('truetype');
-    font-weight: normal; /* Укажите нужный вес, если необходимо */
-    font-style: normal; /* Укажите стиль, если необходимо */
+  font-family: 'Akt';
+  src: url('../fonts/Akt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Важно! */
 }
 
 @font-face {
-    font-family: 'Akt';
-    src: url('../fonts/Akt-Medium.ttf') format('ttf'),
-         url('../fonts/Akt-Medium.ttf') format('truetype');
-    font-weight: 500; /* Medium */
-    font-style: normal;
+  font-family: 'Akt';
+  src: url('../fonts/Akt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; /* Важно! */
 }
 
 body {
