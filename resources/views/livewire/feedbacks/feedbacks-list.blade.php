@@ -1,4 +1,4 @@
-<div class="relative h-[800px] px-[20px] pt-[180px] pb-[120px]">
+<div class="relative h-[800px] ">
     <div class="swiper fullscreen-slider h-[800px]">
         <div class="swiper-wrapper h-[800px]">
             @foreach ($feedbacks as $feedback)
@@ -22,5 +22,9 @@
             </div>
             @endforeach
         </div>
+
+    <!-- Добавьте эти кнопки -->
+        <div class="swiper-button-prev !left-[20px] !text-black"></div>
+        <div class="swiper-button-next !right-[20px] !text-black"></div>
     </div>
 </div>

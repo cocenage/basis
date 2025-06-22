@@ -1,4 +1,4 @@
-<div x-data="swiperMarquee()" x-init="init()" wire:ignore class="swiper-container">
+<div x-data="swiperMarquee()" x-init="init()" wire:ignore class="swiper-container pb-[180px]">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             @foreach ($partners as $partner)

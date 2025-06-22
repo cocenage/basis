@@ -56,7 +56,7 @@
         <livewire:partners.partners-list />
 
 
-        <div class="h-[800px] mb-[360px]">
+        <div class="h-[800px] mb-[180px] px-[20px]">
             <livewire:feedbacks.feedbacks-list />
         </div>
     </div>

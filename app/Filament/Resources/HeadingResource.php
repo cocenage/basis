@@ -33,11 +33,11 @@ class HeadingResource extends Resource
         return 'Контент';
     }
 
-    protected static ?string $navigationLabel = 'Новости';
+    protected static ?string $navigationLabel = 'Блог';
 
-    protected static ?string $modelLabel = 'Новости';
+    protected static ?string $modelLabel = 'Блог';
 
-    protected static ?string $pluralModelLabel = 'Новости';
+    protected static ?string $pluralModelLabel = 'Блог';
 
     public static function form(Form $form): Form
     {

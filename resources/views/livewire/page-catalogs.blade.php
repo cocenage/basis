@@ -32,7 +32,7 @@
                 <li>
                     <button
                         wire:click="$set('selectedCategorySlug', null)"
-                        class="w-full text-left px-[24px] py-[12px] rounded-[10px] cursor-pointer {{ is_null($selectedCategorySlug) ? 'bg-[#e1e1e1] text-black' : 'bg-gray-100 hover:bg-[#e1e1e1] cursor-pointer' }}">
+                        class="w-full text-left px-[24px] py-[12px] rounded-[10px] cursor-pointer {{ is_null($selectedCategorySlug) ? 'bg-[#D02320] text-white' : 'bg-[#08338F] hover:bg-[#D02320] duration-300 text-white cursor-pointer' }}">
                         Все товары
                     </button>
                 </li>
@@ -40,7 +40,7 @@
                 <li>
                     <button
                         wire:click="$set('selectedCategorySlug', '{{ $category->slug }}')"
-                        class="w-full text-left px-[24px] py-[12px] rounded-[10px] cursor-pointer {{ $selectedCategorySlug === $category->slug ? 'bg-[#e1e1e1] text-black' : 'bg-gray-100 hover:bg-[#e1e1e1] cursor-pointer' }}">
+                        class="w-full text-left px-[24px] py-[12px] rounded-[10px] cursor-pointer {{ $selectedCategorySlug === $category->slug ? 'bg-[#D02320] text-white' : 'bg-[#08338F] hover:bg-[#D02320] duration-300 text-white cursor-pointer' }}">
                         {{ $category->name }}
                     </button>
                 </li>
@@ -54,7 +54,7 @@
                     type="text"
                     wire:model.live.debounce.500ms="search"
                     placeholder="Поиск по названию товара..."
-                    class="h-[48px] w-full px-[24px] py-[12px] rounded-[10px] border border-[#f2f2f2] focus:outline-none ring-2 ring-[#f2f2f2] focus:ring-[#e1e1e1]">
+                    class="h-[48px] w-full px-[24px] py-[12px] rounded-[10px] border border-[#f2f2f2] focus:outline-none ring-2 ring-[#08338F] focus:ring-[#D02320] duration-300">
                 @if($search)
                 <button
                     wire:click="$set('search', '')"

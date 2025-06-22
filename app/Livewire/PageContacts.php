@@ -13,7 +13,7 @@ class PageContacts extends Component
     {
         $this->contact = Contact::first();
     }
-    
+
     public function render()
     {
         return view('livewire.page-contacts');

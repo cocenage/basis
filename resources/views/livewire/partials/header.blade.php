@@ -13,7 +13,7 @@
             </a>
             <a wire:navigate href="{{ route('page.news') }}"
                 class="text-[16px] px-[12px] py-[6px] rounded-[5px] {{ request()->routeIs('page.news') ? 'bg-[#D02320]' : 'bg-[#08338F]' }} hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">
-                Новости
+                Блог
             </a>
             <a wire:navigate href="{{ route('page.company') }}"
                 class="text-[16px] px-[12px] py-[6px] rounded-[5px] {{ request()->routeIs('page.company') ? 'bg-[#D02320]' : 'bg-[#08338F]' }} hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">

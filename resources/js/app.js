@@ -2,6 +2,7 @@ import "./bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 document.addEventListener("livewire:navigated", () => {
     // Повторная инициализация AOS после навигации
     AOS.init({
@@ -126,6 +127,10 @@ function initSwiper() {
             delay: 2500,
             disableOnInteraction: false,
         },
+         navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
         on: {
             init: function () {
                 slideColors.forEach((item) => {
@@ -150,17 +155,14 @@ function initSwiper() {
     });
 
     // Обработчики для кнопок
-    const navButtons = document.querySelectorAll(
-        ".swiper-button-next, .swiper-button-prev"
-    );
+     const navButtons = document.querySelectorAll(".swiper-button-next, .swiper-button-prev");
     navButtons.forEach((btn) => {
+        btn.style.cursor = "pointer"; // Добавляем курсор
         btn.addEventListener("mouseenter", () => {
             btn.style.transform = "scale(1.1)";
-            btn.style.backgroundColor = "rgba(255,255,255,0.4)";
         });
         btn.addEventListener("mouseleave", () => {
             btn.style.transform = "scale(1)";
-            btn.style.backgroundColor = "rgba(255,255,255,0.2)";
         });
     });
 }
@@ -247,3 +249,42 @@ function initPhoneInput() {
     // Инициализация начального значения
     formatPhone(phoneInput);
 }
+
+
+
+// Инициализация карты
+function initMap() {
+  const mapElement = document.getElementById('map');
+  if (!mapElement) return;
+
+  // Удаляем старую карту если есть
+  if (mapElement._leaflet_map) {
+    mapElement._leaflet_map.remove();
+    delete mapElement._leaflet_map;
+  }
+
+  const center = [48.7085, 44.5143];
+  const map = L.map(mapElement, {
+    attributionControl: false,
+    preferCanvas: true
+  }).setView(center, 16);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    detectRetina: true
+  }).addTo(map);
+
+  L.marker(center)
+    .addTo(map)
+    .bindPopup("ул. Рокоссовского, 2, Волгоград")
+    .openPopup();
+
+  setTimeout(() => map.invalidateSize(), 100);
+  mapElement._leaflet_map = map;
+}
+
+// Первая загрузка
+document.addEventListener('DOMContentLoaded', initMap);
+
+// Обновление при навигации
+document.addEventListener("livewire:navigated", initMap);

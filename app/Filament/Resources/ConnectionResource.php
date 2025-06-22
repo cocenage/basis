@@ -47,12 +47,13 @@ class ConnectionResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('phone')
-                    ->label('Телефон'),
+                    ->label('Телефон')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->label('Почта'),
+                    ->label('Почта')    ->sortable(),
                 Tables\Columns\TextColumn::make('message')->limit(50)
 
-                    ->label('Сообщение'),
+                    ->label('Сообщение')    ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')->dateTime()
                     ->label('Дата написания')

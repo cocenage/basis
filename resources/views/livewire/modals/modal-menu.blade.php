@@ -45,7 +45,7 @@
                         <h1>Каталог</h1>
                     </a>
                     <a wire:navigate href="{{ route('page.news') }}" class="">
-                        <h1>Новости</h1>
+                        <h1>Блог</h1>
                     </a>
                     <a wire:navigate href="{{ route('page.company') }}" class="">
                         <h1>Компания</h1>

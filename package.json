@@ -35,6 +35,7 @@
     "homepage": "https://github.com/cocenage/basis#readme",
     "dependencies": {
         "aos": "^2.3.4",
+        "leaflet": "^1.9.4",
         "swiper": "^11.2.6"
     }
 }
