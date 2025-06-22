@@ -6,7 +6,7 @@
                 <div class="review h-full rounded-[10px]" style="--card-color: {{ $feedback->color }}">
                     <div class="h-full flex flex-col justify-center items-center text-center text-white relative rounded-[10px]">
                         <div class="">
-                            <h2 class="mx-[15px] text-black md:mx-0">«{{ $feedback->description }}»</h2>
+                            <h2 class="px-[15px] mx-[15px] text-black md:mx-0">«{{ $feedback->description }}»</h2>
                         </div>
                         <div class="absolute bottom-[15px] left-[15px]">
                             <div class="flex gap-[15px]">

@@ -7,30 +7,20 @@
 
 <div class="content mt-[60px] md:mt-[180px]">
     <div class="">
+        <h1 class="md:w-[75%]">
+            Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
+        </h1>
 
-
-<div class="relative mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] overflow-hidden">
-  <!-- Видео -->
-  <video
-    autoplay
-    muted
-    loop
-    preload="metadata"
-    poster="{{ asset('images/imghoma.webp') }}"
-    class="w-full h-full object-cover">
-    <source src="{{ asset('images/home.webm') }}" type="video/webm">
-    Ваш браузер не поддерживает видео.
-  </video>
-
-  <!-- Текст по центру видео -->
-  <div class="absolute inset-0 flex items-center justify-center text-center px-6 md:px-12">
-    <h1 class="text-black text-3xl md:text-5xl font-bold leading-tight md:leading-snug max-w-[90%] md:max-w-[75%] drop-shadow-lg">
-      Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
-    </h1>
-  </div>
-
-
-</div>
+        <video
+            autoplay
+            muted
+            loop
+            preload="metadata"
+            poster="{{ asset('images/imghoma.webp') }}"
+            class="hidden md:block mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
+            <source src="{{ asset('images/home.webm') }}" type="video/webm">
+            Ваш браузер не поддерживает видео.
+        </video>
 
         <!-- Картинка (только на мобильных) -->
         <img
@@ -38,7 +28,7 @@
             alt="img"
             class="block md:hidden mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
         <div class=" mt-[180px]">
-            <h2 class="mb-[75px] md:w-[75%]">Наши приемущества — то, что отличает нас от конкурентов</h2>
+            <h2 class="mb-[75px] md:w-[75%]">   Наши приемущества — то, что отличает нас от конкурентов</h2>
             <div class="pb-[120px]">
                 <hr class="border-1 border-[#f2f2f2]">
                 <div class="flex flex-col md:flex-row md:items-center gap-[15px] md:gap-0 py-[30px]">
