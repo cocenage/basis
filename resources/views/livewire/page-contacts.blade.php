@@ -6,8 +6,8 @@
 
 <div class="content mt-[60px] md:mt-[180px]">
     <h1 class="md:w-[75%]">Всегда на связи! Ответим на вопросы и поможем с выбором.</h1>
-    <div class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] overflow-hidden relative group">
-        <div wire:ignore.self id="map"></div>
+    <div class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] overflow-hidden relative group map-container">
+        <div wire:ignore.self id="map" ></div>
     </div>
     <div class="flex flex-col gap-[30px] pb-[60px]">
         <h2 class="">Номер телефона</h2>
