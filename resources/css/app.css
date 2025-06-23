@@ -75,7 +75,9 @@ header.shrink #logo-text {
 
 
 
-
+.map-container {
+  touch-action: none; /* Блокирует зум и прокрутку на тач-устройствах */
+}
       #map
 {
 width: 100%;
@@ -86,15 +88,7 @@ border-radius: 15px;
         background: #08338F !important;
 
 }
-  @media (max-width: 768px) { /* Только для мобильных */
-    .map-container {
-      touch-action: none;
-      overflow: hidden;
-    }
-    .map-container iframe {
-      pointer-events: none; /* Дополнительная защита */
-    }
-  }
+
 
 
 .leaflet-container {
