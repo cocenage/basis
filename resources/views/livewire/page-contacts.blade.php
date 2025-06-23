@@ -7,10 +7,8 @@
 <div class="content mt-[60px] md:mt-[180px]">
     <h1 class="md:w-[75%]">Всегда на связи! Ответим на вопросы и поможем с выбором.</h1>
     <div class="mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] overflow-hidden relative group">
-
-       <div  wire:ignore.self id="map"></div>
+        <div wire:ignore.self id="map"></div>
     </div>
-
     <div class="flex flex-col gap-[30px] pb-[60px]">
         <h2 class="">Номер телефона</h2>
         <a class="w-max text-[16px] px-[24px] py-[12px] rounded-[10px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white duration-300" target="_blank" href="tel:{{ $contact->phone_a }}">
@@ -23,7 +21,10 @@
             {{ $contact->mail }}
         </a>
     </div>
-
+    <div class="flex flex-col gap-[30px] pb-[60px]">
+        <h2 class="">Свяжитесь с нами</h2>
+        <livewire:feedback.connection />
+    </div>
     <div class="pb-[60px]">
         @if (is_array($contact->name) && count($contact->name) > 0)
         @foreach ($contact->name as $item)
@@ -35,11 +36,6 @@
         </div>
         @endforeach
         @else
-
         @endif
-    </div>
-    <div class="flex flex-col gap-[30px] pb-[60px]">
-        <h2 class="">Свяжитесь с нами</h2>
-        <livewire:feedback.connection />
     </div>
 </div>

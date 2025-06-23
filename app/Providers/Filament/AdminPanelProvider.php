@@ -27,6 +27,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+                    ->brandName('Базис-Волга')
+                     
+            ->brandLogo(asset('images/logo.webp'))
+            ->brandLogoHeight('2rem')
             ->colors([
                 'primary' => Color::Red,
             ])

@@ -28,7 +28,7 @@
             alt="img"
             class="block md:hidden mt-[120px] mb-[180px] w-full h-[800px] rounded-[10px] aspect-video object-cover">
         <div class=" mt-[180px]">
-            <h2 class="mb-[75px] md:w-[75%]">   Наши приемущества — то, что отличает нас от конкурентов</h2>
+            <h2 class="mb-[75px] md:w-[75%]"> Наши приемущества — то, что отличает нас от конкурентов</h2>
             <div class="pb-[120px]">
                 <hr class="border-1 border-[#f2f2f2]">
                 <div class="flex flex-col md:flex-row md:items-center gap-[15px] md:gap-0 py-[30px]">
@@ -60,19 +60,49 @@
         </div>
         <livewire:categories.categories-list />
 
-        <h2 class="mb-[75px]">Партнёры</h2>
 
 
-        <livewire:partners.partners-list />
+        <div class=" mt-[180px] mb-[120px]">
+            <h2 class="mb-[75px] md:w-[75%]">Наши работы — реализованные проекты и довольные клиенты</h2>
+            <div class="pb-[120px]">
+                <div class="flex flex-col lg:grid lg:grid-cols-4 gap-[15px]">
+                    <div class="col-span-2">
+                        <img src="{{ asset('images/main1.webp') }}"
+                            alt="img"
+                            class="w-full h-full rounded-[10px] aspect-video object-cover">
+                        <p class=" py-[30px]  text-[20px]">
+                            <span>Белый диван "Милан"</span><br>
+                            Изготовлен с использованием: итальянской кожи BellaVita премиум-класса,
+                            каркаса из массива бука и анодированной алюминиевой фурнитуры.
+                            Идеальное сочетание роскоши и долговечности.
+                        </p>
+                    </div>
+                    <div class="col-span-2">
+                        <img src="{{ asset('images/main2.webp') }}"
+                            alt="img"
+                            class="w-full h-full rounded-[10px] aspect-video object-cover">
+                        <p class=" py-[30px] text-[20px]">
+                            <span>Черный диван "Блэк Стар"</span><br>
 
+                            В производстве использованы: ударопрочные панели ЛДСП EGGER класса SuperE,
+                            немецкая микрофибра PrimeFlex и механизмы трансформации с 10-летней гарантией.
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
 
 
 
         <livewire:news.news-list />
 
-        <div class="h-[800px]">
-            <livewire:feedbacks.feedbacks-list />
-        </div>
+
+
 
         <div class="">
             <div class="md:w-[75%] pt-[180px]">
