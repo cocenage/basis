@@ -10,7 +10,12 @@
         <h1 class="md:w-[75%]">
             Мебельные материалы нового поколения: где безупречная эстетика встречает промышленную выносливость. Работаем только с теми, кто ценит совершенство в каждой детали.
         </h1>
+        <div class="mb-[120px] mt-[40px] flex gap-[10px]">
 
+            <a wire:navigate href="{{ route('page.company') }}" class="text-[16px] px-[24px] py-[12px] rounded-[10px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">Узнать больше</a>
+            <a wire:navigate href="{{ route('page.contacts') }}" class="text-[16px] px-[24px] py-[12px] rounded-[10px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">Написать нам</a>
+
+        </div>
         <video
             autoplay
             muted
@@ -105,12 +110,20 @@
 
 
         <div class="">
-            <div class="md:w-[75%]">
-                <h1 class="flex flex-col">Мы — команда профессионалов с десятилетним опытом. <span>Наша цель — делать вашу жизнь проще,</span>а бизнес — успешнее.</h1>
+            <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-[15px]">
+                <div class="col-sapn-1">
+                    <h1 class="flex flex-col">Мы — команда профессионалов с десятилетним опытом. <span>Наша цель — делать вашу жизнь проще,</span>а бизнес — успешнее.</h1>
+                    <div class="mb-[120px] mt-[40px]">
+                        <a wire:navigate href="{{ route('page.company') }}" class="text-[16px] px-[24px] py-[12px] rounded-[10px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="col-sapn-1">
+                    <img src="{{ asset('images/team.webp') }}"
+                        alt="img"
+                        class="w-full h-[200px] md:h-[350px] rounded-[10px] aspect-video object-cover">
+                </div>
             </div>
-            <div class="mb-[120px] mt-[40px]">
-                <a wire:navigate href="{{ route('page.company') }}" class="text-[16px] px-[24px] py-[12px] rounded-[10px] bg-[#08338F] hover:bg-[#D02320] active:bg-[#D02320] text-white transition-all duration-300">Узнать больше</a>
-            </div>
+
         </div>
     </div>
 </div>
